@@ -114,14 +114,16 @@ header{
     font-family: 'roboto';
     font-weight: 500;
 }
-
-.dot {
+.dot1 {
     height: 15px;
     width: 15px;
-    background-color:green;
+    background-color:yellow;
     border-radius: 60%;
     display: inline-block;
   }
+.not1{
+    margin-left: 65px;
+}
 
   .content2{
     padding: 10px;
@@ -135,6 +137,13 @@ header{
     font-family: 'roboto';
     font-weight: 500;
   }
+  .dot2 {
+    height: 15px;
+    width: 15px;
+    background-color:green;
+    border-radius: 60%;
+    display: inline-block;
+  }
     
     .content3{
     padding: 10px;
@@ -147,6 +156,16 @@ header{
     margin: auto;
     font-family: 'roboto';
     font-weight: 500;
+}
+.dot3 {
+    height: 15px;
+    width: 15px;
+    background-color:goldenrod;
+    border-radius: 60%;
+    display: inline-block;
+  }
+  .not3{
+    margin-right: 25px;
 }
 
 .content4{
@@ -162,6 +181,13 @@ header{
     font-family: 'roboto';
     font-weight: 500;
 }
+.dot4 {
+    height: 15px;
+    width: 15px;
+    background-color:red;
+    border-radius: 60%;
+    display: inline-block;
+  }
 
 .content5{
     padding: 10px;
