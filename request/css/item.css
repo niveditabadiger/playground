@@ -182,15 +182,20 @@ header{
 .button{
     margin: 0px 140px 30px 1020px;
     float: right;
-    width: 5%;
+    width: 6%;
+    height: 6%;
     display: flex;
     /* background-color: blue(235, 224, 224); */
     /* justify-content: flex-end; */
     /* align-items: flex-end; */
-    border-radius: 60px;
+    border-radius: 10px;
     background-color:#32BDD2; 
     padding:3px;
     margin: none;
 }
 
+.last{
+   display: flex
+   justify-
+}
 
