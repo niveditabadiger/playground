@@ -61,19 +61,21 @@ header{
 .content{
     background-color: white;
     display: flex;
-    flex-direction: row;
+    /* margin-left: 3%; */
+    /* flex-direction: row; */
 }
-.box1{
-    /* width: 8%; */
+/* .box1{
+    width: 8%;
     background-color: gray;
-}
+} */
 .box2{
     padding: 10px;
+    width: 100%;
     background-color: white;
 }
-.box2 span{
+/* .box2 span{
     font-size: 1.2vw;
-}
+} */
 /* .content{
     background-color: white;
     display: flex;
@@ -82,6 +84,7 @@ header{
 
 .box3{
     display: flex;
+    margin-left: 2%;
     background-color: darkorchid;
     justify-content: space-between;
     font-size: 1.2vw;
@@ -101,4 +104,31 @@ header{
 .box7{
     font-size: 1.2vw;
    
+}
+.circle{
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    background-color: aliceblue;
+    display:inline-block;
+    padding: 10px;
+    top: 71%;
+}
+.circle1{
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    background-color: aliceblue;
+    display:inline-block;
+    padding: 10px;
+    top: 99%;
+}
+.circle2{
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    background-color: aliceblue;
+    display:inline-block;
+    padding: 10px;
+    top: 145%;
 }
