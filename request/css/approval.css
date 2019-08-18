@@ -130,6 +130,10 @@ header{
     font-weight: 500;
     margin-bottom: 1%;
 }
+.txt2{
+    line-height:5px;
+    flex-grow: .6;
+}
 .box3{
     display: flex;
     width: 50%;
@@ -143,7 +147,10 @@ header{
     font-weight: 500;
     margin-bottom: 1%;
 }
-
+.txt3{
+    line-height:5px;
+    flex-grow: .6;
+}
 .bottom{
     display: flex;
     /* flex-direction: row; */
