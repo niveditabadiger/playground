@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,6 +16,7 @@ public class Forgetpassword extends AppCompatActivity {
     TextView t1;
     TextView t2;
     Button continuebtn;
+    EditText email;
 
     AlertDialog.Builder alertBuilder;
     @Override
@@ -31,18 +33,22 @@ public class Forgetpassword extends AppCompatActivity {
         i2=findViewById(R.id.imageView4);
         t1=findViewById(R.id.textView8);
         t2=findViewById(R.id.textView9);
+        email=findViewById(R.id.editText);
         continuebtn=findViewById(R.id.button);
         continuebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 //                Intent intent=new Intent(getApplicationContext(),Forgetpassword.class);
 //                startActivity(intent);
-                i1.setVisibility(View.VISIBLE);
-                i2.setVisibility(View.VISIBLE);
-                t1.setVisibility(View.VISIBLE);
-                t2.setVisibility(View.VISIBLE);
+                if(email.getText().toString().equals("")) {
 
-                alertDialog.show();
+                    i1.setVisibility(View.VISIBLE);
+                    i2.setVisibility(View.VISIBLE);
+                    t1.setVisibility(View.VISIBLE);
+                    t2.setVisibility(View.VISIBLE);
+                }
+                else {
+                        alertDialog.show();}
 
             }
         });

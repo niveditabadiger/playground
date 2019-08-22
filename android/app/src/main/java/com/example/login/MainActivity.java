@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
  TextView i3;
  TextView i4;
  TextView forget;
+ EditText name;
 
 // AlertDialog.Builder alertBuilder;
 
@@ -36,15 +38,30 @@ public class MainActivity extends AppCompatActivity {
         i3=findViewById(R.id.textView);
         i4=findViewById(R.id.textView12);
         forget=findViewById(R.id.textView7);
+        name=findViewById(R.id.editText5);
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 //                Intent intent=new Intent(getApplicationContext(),Forgetpassword.class);
 //                startActivity(intent);
-                i1.setVisibility(View.VISIBLE);
-                i2.setVisibility(View.VISIBLE);
-                i3.setVisibility(View.VISIBLE);
-                i4.setVisibility(View.VISIBLE);
+                if (name.getText().toString().equals("")) {
+                    i1.setVisibility(View.VISIBLE);
+                    i2.setVisibility(View.VISIBLE);
+                    i3.setVisibility(View.VISIBLE);
+                    i4.setVisibility(View.VISIBLE);
+                }
+                else {
+//                    name.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View view) {
+                            Intent intent=new Intent(getApplicationContext(),navmenu.class);
+                            startActivity(intent);
+//                        }
+//                    });
+//                    Intent intent=new Intent(getApplicationContext(),navmenu.class);
+//                startActivity(intent);
+                }
             }
         });
 //

@@ -13,9 +13,20 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.ListAdapter;
+import android.widget.ListPopupWindow;
+import android.widget.ListView;
+import android.widget.TextView;
 
 public class navmenu extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    ImageView filter;
+    TextView popup;
+    ListPopupWindow listPopupWindow;
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +49,32 @@ public class navmenu extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        filter=findViewById(R.id.imageView8);
+        String[] content_list = {"CLEAR","APPROVED","AWAITED","DRAFT","REJECTED"};
+
+
+//        popup = findViewById(R.id.)
+        listPopupWindow = new ListPopupWindow(getApplicationContext());
+        listPopupWindow.setAdapter(new ArrayAdapter(getApplicationContext(),R.layout.listcontent,content_list));
+        listPopupWindow.setAnchorView(filter);
+        listPopupWindow.setModal(true); 
+
+        listView=findViewById(R.id.listView);
+        String[] list = {"one","two","three","foure"};
+        listView.setAdapter(new ArrayAdapter<>(getApplicationContext(),R.layout.listcontent,list));
+
+        filter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listPopupWindow.show();
+            }
+        });
+
+
+
+
     }
 
     @Override
