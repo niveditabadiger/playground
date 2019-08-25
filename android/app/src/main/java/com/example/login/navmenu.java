@@ -59,11 +59,17 @@ public class navmenu extends AppCompatActivity
         listPopupWindow = new ListPopupWindow(getApplicationContext());
         listPopupWindow.setAdapter(new ArrayAdapter(getApplicationContext(),R.layout.listcontent,content_list));
         listPopupWindow.setAnchorView(filter);
-        listPopupWindow.setModal(true); 
+        listPopupWindow.setModal(true);
 
         listView=findViewById(R.id.listView);
-        String[] list = {"one","two","three","foure"};
-        listView.setAdapter(new ArrayAdapter<>(getApplicationContext(),R.layout.listcontent,list));
+        String title[]={"Rose","Lotus","Jasmine","RCB","Bengularu Bulls"};
+        String date[]={"22-Aug","24-Aug","28-Aug","30-Aug","2-Sep"};
+        String status[]={"APPROVED","REJECTED","DRAFT","AWAITING","COMPLETED"};
+//        listView.setAdapter(new ArrayAdapter<>(getApplicationContext(),R.layout.listcontent,list));
+        ListAdapter listAdapter=new mylistadapter(getApplicationContext(),title,date,status);
+
+        listView.setAdapter(listAdapter);
+
 
         filter.setOnClickListener(new View.OnClickListener() {
             @Override
