@@ -3,6 +3,17 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/requisitionform2.css">
+
+    <script>
+        function show(){
+            var click=document.getElementById("dropcontent");
+            if(click.style.display=="none"){
+                click.style.display="block";
+            }else{
+                click.style.display="none";
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -53,8 +64,14 @@
                                 <div> 
                                     RS.45,000
                                 </div>
-                                <div> 
-                                    <img src="../images/request-icons-11.png" width="38" height="38">
+                                <div  class="dropdown"> 
+                                    <img src="../images/request-icons-11.png" width="38" height="38"onclick="show()">
+                                    <div id="dropcontent" style="display: none">
+                                        <a href="#">Edit</a>
+                                        <a href="#">Delete</a>
+                                        <!-- <a href="#">item 3</a>
+                                        <a href="#">item 4</a> -->
+                                    </div>
                                 </div>                                                               
                             </div>
             
