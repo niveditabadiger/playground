@@ -3,6 +3,16 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/requisitionform1.css">
+    
+    <script type="text/javascript">
+        function myfun(){
+            document.location.href = "requisitionack.html"
+        }
+
+        function next(){
+            document.location.href = "requisitionform2.html"
+        }
+    </script>
 </head>
 
 <body>
@@ -38,8 +48,8 @@
     
     
             <div class="next">
-                <span style="font-family: 'roboto';font-width: 400"><U>Save Draft</U></span>
-                <button class="button" type="submit">Next -></button>
+                <span style="font-family: 'roboto';font-width: 400"  onclick="myfun()"><U>Save Draft</U></span>
+                <button class="button" type="submit" onclick="next()">Next -></button>
             </div>
     
         </div>

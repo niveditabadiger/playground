@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>Login-Page</title>
-    <link rel="stylesheet" type="text/css" href="../css/1loginpagejs.css">
+    <title>Field Requiride-Page</title>
+    <link rel="stylesheet" type="text/css" href="../css/fieldriquiredjs.css">
 </head>
 
 <body class="bdy">
@@ -14,10 +14,12 @@
             <div class="user">
                 <p>Email or username</p>
                 <input type="text" id="tb" required>
+                <p><img src="request-icons-07.png" width="18px" height="12px" class="image"><span style="color: red">This Field Requried</span></p>
             </div>
             <div class="password">
                 <p>Password</p>
                 <input type="password" id="tbp" required>
+                <p><img src="request-icons-07.png" width="18px" height="12px" class="image"><span style="color: red">This Field Requried</span></p>
             </div>
             <div class="remember-me">
                 <input type="checkbox" name="Remember-me" id="yes"> remember me
@@ -25,11 +27,11 @@
             <div class="forgot-pass">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="forgotpasswordjs.html">forgot password?</a>
+                <a href="forgotpasswordjs.html" onclick="init()" >forgot password?</a>
             </div><br><br><br>
             <div class="login1">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="button" type="submit" onclick="init()" onclick="next()">Login</button>
+                <button class="button" type="submit" >Login</button>
             </div>
         </div>
         <!--</div>-->
@@ -37,13 +39,10 @@
 </body>
 <script>
     function init() {
-        location.replace("fieldriquiredjs.html");
-       
-    }
-    function next() {
-        document.location.href("clear")
+        location.replace("forgotpasswordjs.html");
     }
     console.log("move to login1 page");
 </script>
+
 
 </html>

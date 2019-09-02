@@ -3,6 +3,12 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/myrequest.css">
+
+    <script type="text/javascript">
+        function myfun(){
+            document.location.href = "request-view.html"
+        }
+    </script>
 </head>
 
 <body>
@@ -49,7 +55,7 @@
         <div>
             <img src="../images/notification.png" width=50px>
         </div>
-        <div style="text-align:center">
+        <div style="text-align:center"  onclick="myfun()">
             Approved <span class="dot"></span>
         </div>
     </div>

@@ -3,6 +3,16 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/2myrequest.css">
+
+    <script type="text/javascript">
+        function myfun(){
+            document.location.href = "request-view27.html"
+        }
+
+        function request(){
+            document.location.href = "requisitionform1.html"
+        }
+    </script>
 </head>
 
 <body>
@@ -29,7 +39,7 @@
             <img src="../images/search.png" height="20" width="22" alt="Search-icon"/>
         </div>
         <div>
-            <button class="button" type="submit">New request</button>
+            <button class="button" type="submit"  onclick="request()">New request</button>
         </div>
 
     </div>
@@ -49,7 +59,7 @@
         <div class="not1">
             <img src="../images/notification.png" width=50px>
         </div>
-        <div style="text-align:center">
+        <div style="text-align:center"  onclick="myfun()">
             AWAITING APPROVEL <span class="dot1"></span>
         </div>
     </div>
