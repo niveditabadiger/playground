@@ -1,0 +1,45 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.left{
+    width: 9.7%;
+    float: left;
+    border: 1px solid blueviolet;
+}
+.right{
+    width: 90%;
+    float:right;
+    border: 1px solid blue;
+}
+
+.image{
+    width: 24px;
+    height: 24px;
+}
+.photo{
+    width: 24px;
+    height: 24px;
+    /* float: left; */
+}
+.image1{
+    width: 8px;
+    height: 8px;
+    /* float: left; */
+}
+
+.box{
+    display: flex;
+    justify-content: space-between;
+}
+.menubar{
+    /* width: 9%; */
+    display: flex;
+    /* justify-content: space-between; */
+}
+.right{
+    /* width: 90%; */
+    display: flex;
+    align-items: flex-end;
+}

@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+Section{
+    width: 65%;
+    float: left;
+    height: 400px;
+    background-color: gray;
+}
+
+.right{
+    width: 35%;
+    float: left;
+    height: 400px;
+    background-color: coral;
+}
+
+.bottom{  
+    background-color: red;
+}
