@@ -2,9 +2,12 @@ package com.example.hp.interfaceex;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class ExInterface extends AppCompatActivity implements Exampleinterface, Interface2{
+    Button click;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -12,9 +15,16 @@ public class ExInterface extends AppCompatActivity implements Exampleinterface, 
         setContentView(R.layout.activity_ex_interface);
         test();
         add();
-        construct c = new construct();
-        c.construct();
-        System.out.println("Area of rectang = "+ c.area());
+
+        click = findViewById(R.id.button);
+        click.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                construct b = new construct();
+                System.out.println("Area of rectang = "+ b.area(getApplicationContext()));
+                b.area(getApplicationContext());
+            }
+        });
     }
 
     @Override

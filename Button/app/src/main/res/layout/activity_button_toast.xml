@@ -4,14 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ExInterface">
+    android:layout_margin="32dp"
+    tools:context=".ButtonToast">
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#32BBD2"
-        android:text="click"
+        android:background="#32BBd2"
+        android:text="Button"
         tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="210dp" />
+        tools:layout_editor_absoluteY="210dp"
+        tools:layout_margin="32dp" />
 </android.support.constraint.ConstraintLayout>
