@@ -1,10 +1,8 @@
 package com.example.login;
 
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -55,11 +53,11 @@ public class MainActivity extends AppCompatActivity {
 //                    name.setOnClickListener(new View.OnClickListener() {
 //                        @Override
 //                        public void onClick(View view) {
-                            Intent intent=new Intent(getApplicationContext(),navmenu.class);
+                            Intent intent=new Intent(getApplicationContext(),Navmenu.class);
                             startActivity(intent);
 //                        }
 //                    });
-//                    Intent intent=new Intent(getApplicationContext(),navmenu.class);
+//                    Intent intent=new Intent(getApplicationContext(),Navmenu.class);
 //                startActivity(intent);
                 }
             }

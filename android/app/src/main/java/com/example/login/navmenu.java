@@ -1,5 +1,6 @@
 package com.example.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +14,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
@@ -20,7 +22,12 @@ import android.widget.ListPopupWindow;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class navmenu extends AppCompatActivity
+import com.example.login.global.Status;
+import com.example.login.model.Requestmodel;
+
+import java.util.ArrayList;
+
+public class Navmenu extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     ImageView filter;
@@ -52,23 +59,98 @@ public class navmenu extends AppCompatActivity
 
 
         filter=findViewById(R.id.imageView8);
-        String[] content_list = {"CLEAR","APPROVED","AWAITED","DRAFT","REJECTED"};
+//        String[] content_list = {"CLEAR","APPROVED","AWAITED","DRAFT","REJECTED"};
 
 
 //        popup = findViewById(R.id.)
         listPopupWindow = new ListPopupWindow(getApplicationContext());
-        listPopupWindow.setAdapter(new ArrayAdapter(getApplicationContext(),R.layout.listcontent,content_list));
+        listPopupWindow.setAdapter(new ArrayAdapter(getApplicationContext(),R.layout.listcontents));
         listPopupWindow.setAnchorView(filter);
         listPopupWindow.setModal(true);
 
         listView=findViewById(R.id.listView);
-        String title[]={"Rose","Lotus","Jasmine","RCB","Bengularu Bulls"};
-        String date[]={"22-Aug","24-Aug","28-Aug","30-Aug","2-Sep"};
-        String status[]={"APPROVED","REJECTED","DRAFT","AWAITING","COMPLETED"};
+//        String title[]={"Rose","Lotus","Jasmine","RCB","Bengularu Bulls"};
+//        String date[]={"22-Aug","24-Aug","28-Aug","30-Aug","2-Sep"};
+//        String status[]={"APPROVED","REJECTED","DRAFT","AWAITING","COMPLETED"};
 //        listView.setAdapter(new ArrayAdapter<>(getApplicationContext(),R.layout.listcontent,list));
-        ListAdapter listAdapter=new mylistadapter(getApplicationContext(),title,date,status);
+//        ListAdapter listAdapter=new mylistadapter(getApplicationContext(),title,date,status);
 
-        listView.setAdapter(listAdapter);
+//        listView.setAdapter(listAdapter);
+
+
+//        final ArrayList<String> Array = new ArrayList<String>(6);
+//
+//        final ArrayList<String> ArrayA = new ArrayList<String>(6);
+//
+//        final ArrayList<String> ArrayB = new ArrayList<String>(6);
+//
+//        Array.add("pur-056-2019");
+//        ArrayA.add("Approval");
+//        ArrayB.add("26july2019");
+//
+//        Array.add("pur-056-2019");
+//        ArrayA.add("Approval");
+//        ArrayB.add("26july2019");
+//
+//        Array.add("pur-056-2019");
+//        ArrayA.add("Approval");
+//        ArrayB.add("26july2019");
+//
+//        Array.add("pur-056-2019");
+//        ArrayA.add("Approval");
+//        ArrayB.add("26july2019");
+//
+//        Array.add("pur-056-2019");
+//        ArrayA.add("Approval");
+//        ArrayB.add("26july2019");
+//
+//        Array.add("pur-056-2019");
+//        ArrayA.add("Approval");
+//        ArrayB.add("26july2019");
+        final ArrayList<Requestmodel> requestmodel_list=new ArrayList();
+        Requestmodel requestmodel=new Requestmodel();
+
+        requestmodel.setRequestnum("pur-2019-056");
+        requestmodel.setRequeststatus(Status.APPROVED);
+        requestmodel.setRequestdate("26july2019");
+        requestmodel_list.add(requestmodel);
+
+        requestmodel=new Requestmodel();
+        requestmodel.setRequestnum("pur-2019-057");
+        requestmodel.setRequeststatus(Status.AWAITING);
+        requestmodel.setRequestdate("26july2019");
+        requestmodel_list.add(requestmodel);
+
+        requestmodel=new Requestmodel();
+        requestmodel.setRequestnum("pur-2019-058");
+        requestmodel.setRequeststatus(Status.CLOSED);
+        requestmodel.setRequestdate("26july2019");
+        requestmodel_list.add(requestmodel);
+
+        requestmodel=new Requestmodel();
+        requestmodel.setRequestnum("pur-2019-059");
+        requestmodel.setRequeststatus(Status.REJECTED);
+        requestmodel.setRequestdate("26july2019");
+        requestmodel_list.add(requestmodel);
+
+        requestmodel=new Requestmodel();
+        requestmodel.setRequestnum("pur-2019-060");
+        requestmodel.setRequeststatus(Status.DRAFT);
+        requestmodel.setRequestdate("26july2019");
+        requestmodel_list.add(requestmodel);
+
+        requestmodel=new Requestmodel();
+        requestmodel.setRequestnum("pur-2019-061");
+        requestmodel.setRequeststatus(Status.APPROVED);
+        requestmodel.setRequestdate("26july2019");
+        requestmodel_list.add(requestmodel);
+
+
+
+
+
+        ListAdapter LA = new listadapter(getApplicationContext(),requestmodel_list);
+        listView.setAdapter(LA);
 
 
         filter.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +160,21 @@ public class navmenu extends AppCompatActivity
             }
         });
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Requestmodel request=requestmodel_list.get(position);
+                Intent intent=new Intent(getApplicationContext(),RequestView.class);
+                Bundle requestDataBundle = new Bundle();
+                requestDataBundle.putString("RequestNo",request.getRequestnum());
+                requestDataBundle.putString("RequestDate",request.getRequestdate());
+                requestDataBundle.putString("RequestStatus",request.getRequeststatus().toString());
+
+                intent.putExtra("request",requestDataBundle);
+                startActivity(intent);
+
+            }
+        });
 
 
 
