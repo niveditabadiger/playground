@@ -33,19 +33,19 @@ public class MainActivity extends AppCompatActivity {
 
 
    public void ChangeFragment(View view){
-        Fragment fragment;
+
 
         if( view == findViewById(R.id.button)){
-            fragment = new Fragment();
-            FragmentManager fm = getFragmentManager();
-            FragmentTransaction ft = fm.beginTransaction();
+         FragmentOne   fragment = new FragmentOne();
+            android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
+            android.support.v4.app.FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.fragment_place,fragment);
             ft.commit();
         }
        if( view == findViewById(R.id.button2)){
-        fragment= new Fragment();
-           FragmentManager fm = getFragmentManager();
-           FragmentTransaction ft = fm.beginTransaction();
+      FragmentTwo  fragment= new FragmentTwo();
+           android.support.v4.app.FragmentManager fm = getSupportFragmentManager();
+           android.support.v4.app.FragmentTransaction ft = fm.beginTransaction();
            ft.replace(R.id.fragment_place,fragment);
            ft.commit();
        }
