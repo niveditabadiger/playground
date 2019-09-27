@@ -12,9 +12,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+
+import com.example.hp.fragmentreview.RequestviewDelegate.DelegateRequest;
+import com.example.hp.fragmentreview.global.Status;
+import com.example.hp.fragmentreview.model.Requestmodel;
+
+import java.util.ArrayList;
 
 public class Main2Activity_request extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,DelegateRequest {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +53,28 @@ public class Main2Activity_request extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+           ListviewFragment  fragment=new ListviewFragment();
+           fragment.setDelegateRequest(this);
+            FragmentManager fm = getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.fragment2,fragment);
+            ft.commit();
     }
+
+
+
+
+//    public void Selectfrag (View view) {
+//
+//
+//        if (view == findViewById(R.id.listviewlist))
+//            fragment=new ListviewFragment();
+//        else
+//
+//        }
+
 
     @Override
     public void onBackPressed() {
@@ -97,5 +131,14 @@ public class Main2Activity_request extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void OnClickRequestviewItem(Requestmodel requestmodel) {
+        Fragment  fragment=new RequestviewFragment();
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.fragment2,fragment);
+        ft.commit();
     }
 }
