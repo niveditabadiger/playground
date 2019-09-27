@@ -20,7 +20,7 @@ public class construct extends AppCompatActivity{
         length=5;
         breadth=6;
 
-//        System.out.println("hello.......");
+        System.out.println("hello.......");
 
 //        Toast.makeText(this,"interface one is running",Toast.LENGTH_LONG).show();
     }

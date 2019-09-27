@@ -25,7 +25,8 @@
 
     <fragment
         android:id="@+id/fragment_place"
-        android:name="com.example.hp.fragmentexample.FragmentOne"
+        android:name="com.example.hp.fragmentexample.BlankFragment"
         android:layout_width="match_parent"
-        android:layout_height="398dp" />
+        android:layout_height="398dp"
+        tools:layout="@layout/fragment_fragment_one" />
 </LinearLayout>

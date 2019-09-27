@@ -13,6 +13,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +33,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-   public void ChangeFragment(View view){
+       public void ChangeFragment(View view){
 
-
+//         int orientation = this.getResources().getConfiguration().orientation;
         if( view == findViewById(R.id.button)){
          FragmentOne   fragment = new FragmentOne();
             android.support.v4.app.FragmentManager fm = getSupportFragmentManager();

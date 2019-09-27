@@ -38,6 +38,7 @@ public class listadapter extends BaseAdapter {
 
     @Override
     public int getCount() {
+
         return  RequestList.size();
     }
 
