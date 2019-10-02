@@ -23,6 +23,7 @@ import com.example.hp.fragmentreview.RequestviewDelegate.DelegateRequest;
 import com.example.hp.fragmentreview.global.Status;
 import com.example.hp.fragmentreview.model.Requestmodel;
 
+
 import java.util.ArrayList;
 
 public class Main2Activity_request extends AppCompatActivity implements DelegateRequest{
@@ -65,9 +66,11 @@ public class Main2Activity_request extends AppCompatActivity implements Delegate
     }
 
     @Override
-    public void OnClickRequestviewItem(Requestmodel requestmodel) {
-        int orientation =this.getResources().getConfiguration().orientation;
-        if(orientation == Configuration.ORIENTATION_PORTRAIT){
+    public void onConfigurationChanged(Configuration newConfig){
+        super.onConfigurationChanged(newConfig);
+//    public void OnClickRequestviewItem(Requestmodel requestmodel) {
+//        int orientation =this.getResources().getConfiguration().orientation;
+        if(newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
             RequestviewFragment  fragment=new RequestviewFragment();
 //            fragment.setDelegateRequest(this);
             FragmentManager fm = getSupportFragmentManager();
@@ -85,6 +88,11 @@ public class Main2Activity_request extends AppCompatActivity implements Delegate
             ft.addToBackStack(null);
             ft.commit();
         }
+    }
+
+    @Override
+    public void OnClickRequestviewItem(Requestmodel requestmodel) {
+
     }
 }
 

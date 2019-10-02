@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/Item_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="103dp">
+
+        <TextView
+            android:id="@+id/item_desc"
+            android:layout_width="216dp"
+            android:layout_height="220dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:text='IBM ThinkServer TS150 Tower Server With Max. Processor 1 x Intel Xeon E3 (Quad Core) E3-1225 v5"(3.3 GHz /Cache 8 MB)... / STD MEMORY 8GB X 1/ MAX. MEMORY 64GB 4 Slots/HARD DRIVE 1 X 1TB SATA 3.5" 7.2k SATA / STD. HDD BAY/ 3 bay MAX. HDD BAY upto 4 x 3.5" +1 x 2.5" bay/ OPTICAL Multi Burner/Integrated RAID 0,1,5,10 (RAID 121i).'
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_qty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="95dp"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginRight="35dp"
+            android:text="01"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/item_desc"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="95dp"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginRight="35dp"
+            android:text="10 Jul 2019"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/item_desc"
+            app:layout_constraintTop_toBottomOf="@+id/item_qty" />
+
+        <TextView
+            android:id="@+id/item_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="95dp"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginRight="35dp"
+            android:text="45000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/item_desc"
+            app:layout_constraintTop_toBottomOf="@+id/item_date" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>
