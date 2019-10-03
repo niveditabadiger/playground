@@ -8,14 +8,12 @@
     tools:context=".Main2Activity_request"
     tools:showIn="@layout/app_bar_main2_activity_request">
 
-    <fragment
-        android:id="@+id/fragment2"
-        android:name="com.example.hp.fragmentreview.ListviewFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout="@layout/fragment_listview" />
+    <FrameLayout
+        android:id="@+id/FrameLayoutFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="205dp"
+        tools:layout_editor_absoluteY="225dp">
+
+    </FrameLayout>
 </android.support.constraint.ConstraintLayout>

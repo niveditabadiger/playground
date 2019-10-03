@@ -5,7 +5,7 @@
     android:orientation="horizontal">
 
     <FrameLayout
-        android:id="@+id/FrameLayout"
+        android:id="@+id/FrameLayoutFragment"
         android:layout_width="336dp"
         android:layout_height="match_parent">
 
@@ -15,15 +15,7 @@
         android:id="@+id/FrameholderLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <fragment
-            android:id="@+id/fragment"
-            class="com.example.hp.fragmentreview.RequestviewFragment"
-            android:layout_width="match_parent"
-            android:layout_height="369dp"
-            tools:layout="@layout/fragment_requestview" />
-    </LinearLayout>
+        android:orientation="vertical" />
 </LinearLayout>
 
 

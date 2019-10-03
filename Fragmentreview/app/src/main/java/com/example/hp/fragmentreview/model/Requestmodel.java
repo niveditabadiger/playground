@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 public class Requestmodel implements Serializable {
     String Requestnum;
-    Status Requeststatus;
+    Enum Requeststatus;
     String Requestdate;
 
     String items_desc;
@@ -18,7 +18,7 @@ public class Requestmodel implements Serializable {
         return Requestnum;
     }
 
-    public Status getRequeststatus() {
+    public Enum getRequeststatus() {
         return Requeststatus;
     }
 
@@ -30,8 +30,8 @@ public class Requestmodel implements Serializable {
         Requestnum = requestnum;
     }
 
-    public void setRequeststatus(Status requeststatus) {
-        Requeststatus = requeststatus;
+    public void setRequeststatus(Enum requeststatus) {
+        this.Requeststatus = requeststatus;
     }
 
     public void setRequestdate(String requestdate) {

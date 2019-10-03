@@ -2,29 +2,12 @@ package com.example.hp.fragmentreview;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
-import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
 import com.example.hp.fragmentreview.RequestviewDelegate.DelegateRequest;
-import com.example.hp.fragmentreview.global.Status;
 import com.example.hp.fragmentreview.model.Requestmodel;
-
-
-import java.util.ArrayList;
 
 public class Main2Activity_request extends AppCompatActivity implements DelegateRequest{
         //implements NavigationView.OnNavigationItemSelectedListener,DelegateRequest {
@@ -60,7 +43,7 @@ public class Main2Activity_request extends AppCompatActivity implements Delegate
         fragment.setDelegateRequest(this);
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.fragment2,fragment);
+        ft.replace(R.id.FrameLayoutFragment,fragment);
         ft.addToBackStack(null);
         ft.commit();
     }
@@ -68,31 +51,49 @@ public class Main2Activity_request extends AppCompatActivity implements Delegate
     @Override
     public void onConfigurationChanged(Configuration newConfig){
         super.onConfigurationChanged(newConfig);
-//    public void OnClickRequestviewItem(Requestmodel requestmodel) {
-//        int orientation =this.getResources().getConfiguration().orientation;
-        if(newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
-            RequestviewFragment  fragment=new RequestviewFragment();
-//            fragment.setDelegateRequest(this);
+      if(newConfig.orientation == Configuration.ORIENTATION_PORTRAIT){
+          RequestviewFragment  fragment=new RequestviewFragment();
+////            fragment.setDelegateRequest(this);
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.fragment2,fragment);
+            ft.replace(R.id.FrameLayoutFragment,fragment);
                         ft.addToBackStack(null);
             ft.commit();
         }
-        else{
+        else if(newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE){
             RequestviewFragment  fragment=new RequestviewFragment();
-//              fragment.setDelegateRequest(this);
+////              fragment.setDelegateRequest(this);
             FragmentManager fm = getSupportFragmentManager();
             FragmentTransaction ft = fm.beginTransaction();
-            ft.replace(R.id.fragment,fragment);
+            ft.replace(R.id.FrameholderLayout,fragment);
             ft.addToBackStack(null);
             ft.commit();
         }
     }
 
     @Override
+//    public void onConfigurationChanged(Configuration newConfig){
+//        super.onConfigurationChanged(newConfig);
     public void OnClickRequestviewItem(Requestmodel requestmodel) {
-
+        int orientation =this.getResources().getConfiguration().orientation;
+        if(orientation==Configuration.ORIENTATION_PORTRAIT) {
+            RequestviewFragment fragment = new RequestviewFragment();
+            FragmentManager fm = getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.FrameLayoutFragment, fragment);
+            ft.addToBackStack(null);
+            ft.commit();
+            ((RequestviewFragment) fragment).dataset(requestmodel);
+        }
+        else {
+            RequestviewFragment fragment = new RequestviewFragment();
+            FragmentManager fm = getSupportFragmentManager();
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.FrameholderLayout, fragment);
+            ft.addToBackStack(null);
+            ft.commit();
+            ((RequestviewFragment) fragment).dataset(requestmodel);
+        }
     }
 }
 
