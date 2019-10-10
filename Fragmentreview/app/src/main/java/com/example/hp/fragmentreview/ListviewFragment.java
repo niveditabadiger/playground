@@ -28,44 +28,41 @@ public class ListviewFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-                view=inflater.inflate(R.layout.fragment_listview, container, false);
+        listView=view.findViewById(R.id.listviewlist);
 
-
-    listView=view.findViewById(R.id.listviewlist);
-
-    final ArrayList<Requestmodel> requestmodel_list=new ArrayList();
-    Requestmodel requestmodel=new Requestmodel();
+        final ArrayList<Requestmodel> requestmodel_list=new ArrayList();
+        Requestmodel requestmodel=new Requestmodel();
 
         requestmodel.setRequestnum("pur-2019-056");
         requestmodel.setRequeststatus(Status.APPROVED);
         requestmodel.setRequestdate("26july2019");
         requestmodel_list.add(requestmodel);
 
-    requestmodel=new Requestmodel();
+        requestmodel=new Requestmodel();
         requestmodel.setRequestnum("pur-2019-057");
         requestmodel.setRequeststatus(Status.AWAITING);
         requestmodel.setRequestdate("26july2019");
         requestmodel_list.add(requestmodel);
 
-    requestmodel=new Requestmodel();
+        requestmodel=new Requestmodel();
         requestmodel.setRequestnum("pur-2019-058");
         requestmodel.setRequeststatus(Status.CLOSED);
         requestmodel.setRequestdate("26july2019");
         requestmodel_list.add(requestmodel);
 
-    requestmodel=new Requestmodel();
+        requestmodel=new Requestmodel();
         requestmodel.setRequestnum("pur-2019-059");
         requestmodel.setRequeststatus(Status.REJECTED);
         requestmodel.setRequestdate("26july2019");
         requestmodel_list.add(requestmodel);
 
-    requestmodel=new Requestmodel();
+        requestmodel=new Requestmodel();
         requestmodel.setRequestnum("pur-2019-060");
         requestmodel.setRequeststatus(Status.DRAFT);
         requestmodel.setRequestdate("26july2019");
         requestmodel_list.add(requestmodel);
 
-    requestmodel=new Requestmodel();
+        requestmodel=new Requestmodel();
         requestmodel.setRequestnum("pur-2019-061");
         requestmodel.setRequeststatus(Status.APPROVED);
         requestmodel.setRequestdate("26july2019");
@@ -73,9 +70,8 @@ public class ListviewFragment extends Fragment {
 
 
 
-    ListAdapter LA = new listviewadapter(view.getContext(),requestmodel_list);
+        ListAdapter LA = new listviewadapter(view.getContext(),requestmodel_list);
         listView.setAdapter(LA);
-
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
