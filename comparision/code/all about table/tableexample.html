@@ -1,0 +1,48 @@
+<html><title>Example of table</title></head>
+<body>
+
+<div id="example-table"></div>
+
+
+
+</body>
+<!-- <script>
+
+var table =new Tabulator("#example-table",{
+    height:"311px",
+    movableRows:true,
+    columns:[
+        {rowHandle:true, formatter:"handle",headerSort:false, forzone:true, width:30, minwidth:30},
+        {title:"Name", field:"name", width:150},
+        {title:"Progress", field:"progress", formatter:"progress",sorter:"number"},
+        {title:"Gender", field:"gender"},
+        {title:"Rating", field:"rating", formatter:"star", formatterParams:{stars:6}, align:"center", width:120},
+        {title:"Favourite Color", field:"col"},
+        {title:"Date Of Birth", field:"dob", align:"center", sorter:"date"},
+        {title:"Driver", field:"car", align:"center", formatter:"tickCross"},
+        
+    ],
+    rowMoved:function(row){
+        console.log("Row: " + row.getData().name + " has been moved");
+    }
+});
+
+
+var table = new Tabulator("#example-table", {
+    rowMoved:function(row){
+        //row - row component
+    }
+});
+
+var table = new Tabulator("#example-table", {
+    movableRows: true, //enable user movable rows
+    columns:[
+        {rowHandle:true, formatter:"handle", headerSort:false, frozen:true, width:30, minWidth:30},
+        {title:"name", field:"name"} //normal column
+    ]
+})
+</script> -->
+
+
+
+</html>
