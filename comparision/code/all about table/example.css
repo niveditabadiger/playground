@@ -6,12 +6,12 @@ table th.noDrag{
 	cursor: not-allowed;
 }
 
-.drag_freeze { /* замороженный (исходный перетаскиваемый) столбец или ряд */
+.drag_freeze { 
 	background: #bbb;
 	color: #888;
 }
 
-.ghost { /* стили плавающей таблицы */
+.ghost { 
 	background: #cdfff8;
 	position: absolute;
 	z-index: 10000;
