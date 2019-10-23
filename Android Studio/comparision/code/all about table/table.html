@@ -1,0 +1,106 @@
+<html>
+    <head><title>try</title>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        
+        <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script> -->
+        <!-- <script type="text/javascript">
+            $(document).ready(function(){
+                $("#newrow").click(function(){
+                    var addcontrols="<tr>"
+                        addcontrols+="<td><input type='text' name='employeename' placeholder='EnterNamae'></td>"
+                        addcontrols+="<td><input type='text' name='Email' placeholder='EnterEmail'></td>"
+                        addcontrols+="<td><input type='text' name='Salary' placeholder='EnterSalary'></td>"
+                        addcontrols+="<td><button class='remove'>-</button></td>"
+                        addcontrols+="</tr>"
+                            $("table tbody").append(addcontrols);
+
+                            
+                           
+                });
+               
+            });
+        </script> -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+        <script>
+            var html="<tr><td><input type='text' name='employeename' placeholder='EnterNamae'></td> <td><input type='text' name='Email' placeholder='EnterEmail'></td><td><input type='text' name='Salary' placeholder='EnterSalary'></td><td><button class='remove'>-</button></td></tr>"            $(function(){
+                $('tbody').sortable();
+
+
+                $('newrow').click(function(){
+                    $('tbody').append(html);
+                });
+
+
+            });
+        </script>
+        <style>
+            .remove{
+                height: 20px;
+                background-color: tomato;
+                color: white;
+                border-radius: 10px;
+            }
+            #newrow{
+                background-color: lightseagreen;
+            }
+            tr:hover{
+                cursor: move;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <h1>inserting values</h1>
+
+
+        <table border="1">
+
+            <thead>
+                <tr>
+                    <th>         </th>
+                    <th>Product1</th>
+                    <th>Product2</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                    <tr>
+                            <td><input type='text' name='employeename' placeholder='EnterNamae'></td>
+                            <td><input type='text' name='Email' placeholder='EnterEmail'></td>
+                            <td><input type='text' name='Salary' placeholder='EnterSalary'></td>
+                            <td><button class='remove'>-</button></td>
+                            </tr>
+            </tbody>
+
+            <!-- <tfoot>
+                <tr>
+                    <td><input type="button" value="Add new row" id="newrow"></td>
+                </tr>
+            </tfoot> -->
+        </table>
+        <input type="button" value="Add new row" id="newrow">
+
+
+
+
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+        <script>
+            var html="<tr><td><input type='text' name='employeename' placeholder='EnterNamae'></td> <td><input type='text' name='Email' placeholder='EnterEmail'></td><td><input type='text' name='Salary' placeholder='EnterSalary'></td><td><button class='remove'>-</button></td></tr>"            $(function(){
+                $('tbody').sortable();
+
+
+                $('newrow').click(function(){
+                    $('tbody').append(html);
+                });
+
+
+            });
+        </script> -->
+    </body>
+</html>
