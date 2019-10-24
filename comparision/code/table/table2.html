@@ -1,0 +1,131 @@
+<HTML>
+    <HEAD>
+        <TITLE> Add/Remove dynamic rows in HTML table </TITLE>
+        <SCRIPT language="javascript">
+            function addRow(tableID) {
+    
+                var table = document.getElementById(tableID);
+    
+                var rowCount = table.rows.length;
+                var row = table.insertRow(rowCount);
+    
+                var colCount = table.rows[0].cells.length;
+    
+                for(var i=0; i<colCount; i++) {
+    
+                    var newcell	= row.insertCell(i);
+    
+                    newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+                    //alert(newcell.childNodes);
+                    // switch(newcell.childNodes[0].type) {
+                    //     case "text":
+                    //             newcell.childNodes[0].value = "";
+                    //             break;
+                    //     case "checkbox":
+                    //             newcell.childNodes[0].checked = false;
+                    //             break;
+                    //     case "select-one":
+                    //             newcell.childNodes[0].selectedIndex = 0;
+                    //             break;
+                    // }
+                }
+            }
+    
+            function deleteRow(tableID) {
+                try {
+                var table = document.getElementById(tableID);
+                var rowCount = table.rows.length;
+    
+                for(var i=0; i<rowCount; i++) {
+                    var row = table.rows[i];
+                    var chkbox = row.cells[0].childNodes[0];
+                    if(null != chkbox && true == chkbox.checked) {
+                        if(rowCount <= 1) {
+                            alert("Cannot delete all the rows.");
+                            break;
+                        }
+                        table.deleteRow(i);
+                        rowCount--;
+                        i--;
+                    }
+    
+    
+                }
+                }catch(e) {
+                    alert(e);
+                }
+            }
+
+            // add column
+            // function addColumn(tableID){
+            //     var tblHeadobj = document.getElementById(tableID).tHead;
+            //     for (var h=0; h<tblHeadobj.row.length; h++){
+            //         var newTH = document.createElement('th');
+            //         tblHeadobj.rows[h].appendChild(newTH);
+            //         newTH.innerHTML = '[th] row:' + h + ',cell: ' +(tblHeadobj.rows[h].cell.length - 1)
+            //     }
+            //     var tblBodyObj = document.getElementById(tableID).tBodies[0];
+            //     for (var i=0; i<tblBodyObj.rows.length; i++){
+            //         var newCell = tblBodyObj.rows[i].insertCell(-1);
+            //         newCell.innerHTML = '[td] row:' + i + ', cell: ' + (tblBodyObj.rows[i].cells.length - 1)
+            //     }
+            // }
+
+             
+
+
+
+
+
+            // add column
+            function addColumn(tableID){
+                var table = document.getElementById(tableID);
+                
+
+                for(var i=0; i<table.rows.length; i++){
+                    
+                    createCell(table.rows[i].insertCell(table.rows[i].cells.innerHTML));
+                    
+                }
+            }
+            function createCell() {
+                // var table = document.getElementById();
+            }
+
+        </SCRIPT>
+    </HEAD>
+    <BODY>
+    
+        <INPUT type="button" value="Add Parameter" onclick="addRow('dataTable')" />
+    
+        <INPUT type="button" value="Delete Parameter" onclick="deleteRow('dataTable')" />
+
+        <INPUT type="button" value="Add Product" onclick="addColumn('dataTable')" />
+    
+        <TABLE id="dataTable" width="350px" border="1">
+           
+            <!-- <TR>
+                <TH><INPUT type="button" value="Add Parameter" onclick="addRow('dataTable')" /></TH>
+                <TH><INPUT type="button" value="Delete Parameter" onclick="deleteRow('dataTable')" /></TH>
+                <TH><INPUT type="button" value="Add Product" onclick="addColumn('dataTable')" /></TH>
+            </TR> -->
+       
+            <TR>
+                <td></td>
+                <!-- <TD><INPUT type="checkbox" name="chk"/></TD> -->
+                <!-- <TD><INPUT type="text" name="txt"/></TD> -->
+                <!-- <TD><INPUT type="text" name="txt"/></TD> -->
+                <!-- <TD>
+                    <SELECT name="country">
+                        <OPTION value="in">India</OPTION>
+                        <OPTION value="de">Germany</OPTION>
+                        <OPTION value="fr">France</OPTION>
+                        <OPTION value="us">United States</OPTION>
+                        <OPTION value="ch">Switzerland</OPTION>
+                    </SELECT>
+                </TD> -->
+            </TR>
+        </TABLE>
+    
+    </BODY>
+    </HTML>
