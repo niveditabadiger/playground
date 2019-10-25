@@ -1,0 +1,15 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    background-color: #f1f1f1;
+}
+
+.main{
+    /* display: flex; */
+    margin: 2%;
+    height: 91%;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 0px 10px #00000029;
+    opacity: 1;
+}
+

@@ -1,6 +1,7 @@
 <HTML>
     <HEAD>
         <TITLE> Add/Remove dynamic rows in HTML table </TITLE>
+        <link rel="stylesheet" type="text/css" href="main.css">
         <SCRIPT language="javascript">
             function addRow(tableID) {
     
@@ -16,6 +17,7 @@
                     var newcell	= row.insertCell(i);
     
                     newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+                    console.log("hiii");
                     //alert(newcell.childNodes);
                     // switch(newcell.childNodes[0].type) {
                     //     case "text":
@@ -56,76 +58,51 @@
                 }
             }
 
+             
             // add column
             // function addColumn(tableID){
-            //     var tblHeadobj = document.getElementById(tableID).tHead;
-            //     for (var h=0; h<tblHeadobj.row.length; h++){
-            //         var newTH = document.createElement('th');
-            //         tblHeadobj.rows[h].appendChild(newTH);
-            //         newTH.innerHTML = '[th] row:' + h + ',cell: ' +(tblHeadobj.rows[h].cell.length - 1)
-            //     }
-            //     var tblBodyObj = document.getElementById(tableID).tBodies[0];
-            //     for (var i=0; i<tblBodyObj.rows.length; i++){
-            //         var newCell = tblBodyObj.rows[i].insertCell(-1);
-            //         newCell.innerHTML = '[td] row:' + i + ', cell: ' + (tblBodyObj.rows[i].cells.length - 1)
-            //     }
-            // }
-
-             
-
-
-
-
-
-            // add column
-            function addColumn(tableID){
-                var table = document.getElementById(tableID);
+            //     var table = document.getElementById(tableID);
                 
 
-                for(var i=0; i<table.rows.length; i++){
+            //     for(var i=0; i<table.rows.length; i++){
+                  
+            //         createCell(table.rows[i].insertCell(table.rows[i].cells.length));
+            //         console.log("hello");
                     
-                    createCell(table.rows[i].insertCell(table.rows[i].cells.innerHTML));
-                    
-                }
-            }
-            function createCell() {
-                // var table = document.getElementById();
-            }
+            //     }
+            // }
+            // function createCell() {
+                
+            // }
 
         </SCRIPT>
     </HEAD>
     <BODY>
+    <div style="margin: 2%; padding: 10%; height: 45%;" class="main">
+        <!-- <INPUT type="button" value="Add Parameter" onclick="addRow('dataTable')" /> -->
     
-        <INPUT type="button" value="Add Parameter" onclick="addRow('dataTable')" />
-    
-        <INPUT type="button" value="Delete Parameter" onclick="deleteRow('dataTable')" />
+        <!-- <INPUT type="button" value="Delete Parameter" onclick="deleteRow('dataTable')" /> -->
 
-        <INPUT type="button" value="Add Product" onclick="addColumn('dataTable')" />
+        <!-- <INPUT type="button" value="Add Product" onclick="addColumn('dataTable')" /> -->
     
-        <TABLE id="dataTable" width="350px" border="1">
+        <TABLE id="dataTable" border="1">
            
-            <!-- <TR>
-                <TH><INPUT type="button" value="Add Parameter" onclick="addRow('dataTable')" /></TH>
-                <TH><INPUT type="button" value="Delete Parameter" onclick="deleteRow('dataTable')" /></TH>
-                <TH><INPUT type="button" value="Add Product" onclick="addColumn('dataTable')" /></TH>
-            </TR> -->
+           <thead><INPUT type="button" value="Add Parameter" onclick="addRow('dataTable')" /></thead>
+           <thead><INPUT type="button" value="Add Product" onclick="addColumn('dataTable')" /></thead>
        
             <TR>
-                <td></td>
-                <!-- <TD><INPUT type="checkbox" name="chk"/></TD> -->
-                <!-- <TD><INPUT type="text" name="txt"/></TD> -->
-                <!-- <TD><INPUT type="text" name="txt"/></TD> -->
-                <!-- <TD>
-                    <SELECT name="country">
-                        <OPTION value="in">India</OPTION>
-                        <OPTION value="de">Germany</OPTION>
-                        <OPTION value="fr">France</OPTION>
-                        <OPTION value="us">United States</OPTION>
-                        <OPTION value="ch">Switzerland</OPTION>
-                    </SELECT>
-                </TD> -->
+                    <!-- <th></th> -->
+                <td><INPUT type="checkbox" name="chk"/></td>
+                <td><INPUT type="text" name="txt"/></td>
+                <td><INPUT type="text" name="txt"/></td>
+                <td><INPUT type="text" name="txt"/></td>
+                <td><INPUT type="text" name="txt"/></td>
+               
+               
             </TR>
         </TABLE>
-    
+        <INPUT type="button" value="Delete Parameter" onclick="deleteRow('dataTable')" />
+
+    </div>
     </BODY>
     </HTML>

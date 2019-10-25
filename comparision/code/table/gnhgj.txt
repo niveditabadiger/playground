@@ -1,0 +1,105 @@
+function addRow(tableID) {
+    
+                var table = document.getElementById(tableID);
+    
+                var rowCount = table.rows.length;
+                var row = table.insertRow(rowCount);
+    
+                var colCount = table.rows[0].cells.length;
+    
+                for(var i=0; i<colCount; i++) {
+    
+                    var newcell	= row.insertCell(i);
+    
+                    newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+}
+}
+
+function addColumn(tableID){
+	var table = document.getElementById(tableID);
+ 	var columnCount = table.rows.length;
+	var column = table.insertColumn(columnCount);
+	
+	var rowCount = table.column[0].cells.length;
+	for(var i=0; i<rowCount;i++){
+		var newcell = column.insertCell(i);
+		new.innerHTML = table.row[0].cell[i].innerHTML;
+}
+}
+	
+
+ function addColumn(tableID){
+                var table = document.getElementById(tableID);
+                // var rowCount = table.rows.length;
+
+                for(var i=0; i<table.rows.length; i++){
+                    // var createCell;
+                    createCell(table.rows[i].insertCell(table.rows[i].cells.innerHTML));
+                    // createCell(table.rows[i].insertCell(newcell));
+
+                    // var newcell	= row.insertCell(i);
+    
+                    // newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+                }
+            }
+            function createCell(cell, text, style) {
+              var table = document.createElement('table'), // create DIV element
+             txt = document.createTextNode(text); // create text node
+             table.appendChild(txt);                    // append text node to the DIV
+            //  div.setAttribute('class', style);        // set DIV class attribute
+            //  div.setAttribute('className', style);    // set DIV class attribute for IE (?!)
+             cell.appendChild(table);                   // append DIV to the table cell
+            }
+
+
+
+
+
+
+
+ // add column working
+
+ function addColumn(tableID){
+     var table = document.getElementById(tableID);
+     // var rowCount = table.rows.length;
+     for(var i=0; i<table.rows.length; i++){
+         // var createCell;
+         createCell(table.rows[i].insertCell(table.rows[i].cells.innerHTML));
+         // createCell(table.rows[i].insertCell(newcell));
+         // var newcell	= row.insertCell(i);
+         // newcell.innerHTML = table.rows[0].cells[i].innerHTML;
+     }
+ }
+ function createCell() {
+     // var table = document.getElementById();
+ //   var table = document.createElement('table'), // create DIV element
+ //  txt = document.createTextNode(text); // create text node
+ //  table.appendChild(txt);                    // append text node to the DIV
+ // //  div.setAttribute('class', style);        // set DIV class attribute
+ // //  div.setAttribute('className', style);    // set DIV class attribute for IE (?!)
+ //  cell.appendChild(table);                   // append DIV to the table cell
+ }
+
+
+
+
+http://talkerscode.com/webtricks/add-edit-and-delete-rows-from-table-dynamically-using-javascript.php
+
+
+
+
+
+            // add column
+            // function addColumn(tableID){
+            //     var tblHeadobj = document.getElementById(tableID).tHead;
+            //     for (var h=0; h<tblHeadobj.row.length; h++){
+            //         var newTH = document.createElement('th');
+            //         tblHeadobj.rows[h].appendChild(newTH);
+            //         newTH.innerHTML = '[th] row:' + h + ',cell: ' +(tblHeadobj.rows[h].cell.length - 1)
+            //     }
+            //     var tblBodyObj = document.getElementById(tableID).tBodies[0];
+            //     for (var i=0; i<tblBodyObj.rows.length; i++){
+            //         var newCell = tblBodyObj.rows[i].insertCell(-1);
+            //         newCell.innerHTML = '[td] row:' + i + ', cell: ' + (tblBodyObj.rows[i].cells.length - 1)
+            //     }
+            // }
