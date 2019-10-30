@@ -1,15 +1,28 @@
 <html>
     <head>
         <script type="text/javscript" src="try_script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
 
         <script>
-        function save_row(no){
+        function save_row(no)
+        {
             var parameter_val;
+            if(document.getElementById('parameter_text') != null){
+                str = document.getElementById("parameter_text").value;
+            }
     // var parameter_val=document.getElementById("parameter_text"+no).value;
     var product_val=document.getElementById("product_text"+no).value;
+    var product1_val=document.getElementById("product1_text"+no).value;
+    var product2_val=document.getElementById("product2_text"+no).value;
+    var product3_val=document.getElementById("product3_text"+no).value;
 
     document.getElementById("parameter_row"+no).innerHTML=parameter_val;
     document.getElementById("product_row"+no).innerHTML=product_val;
+    document.getElementById("product1_row"+no).innerHTML=product1_val;
+    document.getElementById("product2_row"+no).innerHTML=product2_val;
+    document.getElementById("product3_row"+no).innerHTML=product3_val;
 
     document.getElementById("edit_button"+no).style.display="block";
     document.getElementById("save_button"+no).style.display="none";
@@ -17,7 +30,7 @@
 
 function delete_row(no)
 {
- document.getElementById("row"+no+"").outerHTML=" ";
+ document.getElementById("row"+no+"").outerHTML="";
 }
 
 
@@ -25,13 +38,19 @@ function add_row()
 {
     var new_parameter=document.getElementById("new_parameter").value;
     var new_product=document.getElementById("new_product").value;
+    var new_product1=document.getElementById("new_product1").value;
+    var new_product2=document.getElementById("new_product2").value;
+    var new_product3=document.getElementById("new_product3").value;
 
     var table=document.getElementById("data_table");
     var table_len=(table.rows.length)-1;
-    var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='parameter_row"+table_len+"'>"+new_parameter+"</td><td id='product_row"+table_len+"'>"+new_product+"</td><td><input type='button' id='edit_button"+table_len+"' value='Edit' class='edit' onclick='edit_row("+table_len+")'> <input type='button' id='save_button"+table_len+"' value='Save' class='save' onclick='save_row("+table_len+")'> <input type='button' value='Delete' class='delete' onclick='delete_row("+table_len+")'></td></tr>";
+    var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='parameter_row"+table_len+"'>"+new_parameter+"</td><td id='product_row"+table_len+"'>"+new_product+"</td><td id='product1_row"+table_len+"'>"+new_product1+"</td><td id='product2_row"+table_len+"'>"+new_product2+"</td><td id='product3_row"+table_len+"'>"+new_product3+"</td><td><input type='button' id='edit_button"+table_len+"' value='Edit' class='edit' onclick='edit_row("+table_len+")'> <input type='button' id='save_button"+table_len+"' value='Save' class='save' onclick='save_row("+table_len+")'> <input type='button' value='Delete' class='delete' onclick='delete_row("+table_len+")'></td></tr>";
 
-    document.getElementById("new_parameter").value="";
-    document.getElementById("new_product").value="";
+    document.getElementById("new_parameter").value=" ";
+    document.getElementById("new_product").value=" ";
+    document.getElementById("new_product1").value=" ";
+    document.getElementById("new_product2").value=" ";
+    document.getElementById("new_product3").value=" ";
 }
 
 function edit_row(no){
@@ -40,29 +59,23 @@ function edit_row(no){
 
     var parameter=document.getElementById("parameter_row"+no);
     var product=document.getElementById("product_row"+no);
+    var product1=document.getElementById("product1_row"+no);
+    var product2=document.getElementById("product2_row"+no);
+    var product3=document.getElementById("product3_row"+no);
 
     var parameter_data=parameter.innerHTML;
     var product_data=product.innerHTML;
+    var product1_data=product.innerHTML;
+    var product2_data=product.innerHTML;
+    var product3_data=product.innerHTML;
 
     parameter.innerHTML="<input type='text' id='prameter_text"+no+"' value='"+parameter_data+"'>";
     product.innerHTML="<input type='text' id='product_text"+no+"' value='"+product_data+"'>";
+    product1.innerHTML="<input type='text' id='product1_text"+no+"' value='"+product1_data+"'>";
+    product2.innerHTML="<input type='text' id='product2_text"+no+"' value='"+product2_data+"'>";
+    product3.innerHTML="<input type='text' id='product3_text"+no+"' value='"+product3_data+"'>";
 }
 
-     // add column
-            function addColumn(tableID){
-                var table = document.getElementById(tableID);
-                
-
-                for(var i=0; i<table.rows.length; i++){
-                  
-                    createCell(table.rows[i].insertCell(table.rows[i].cells.length));
-                    console.log("hello");
-                    
-                }
-            }
-            function createCell() {
-                
-            }
 
 
         </script>
@@ -74,12 +87,15 @@ function edit_row(no){
 
                 <tr>
                     <!-- <th>Sl.no</th> -->
-                    <th>Parameter</th>    
-                    <th>Products</th>
-                    <th><INPUT type="button" value="Add Product" onclick="addColumn('dataTable')" /></th>
+                    <th><input type="button" class="add" onclick="add_row();" value="Add parameter"></th>    
+                    <th>Product</th>
+                    <th>product</th>
+                    <th>product</th>
+                    <th>product</th>
+                    <!-- <th><INPUT type="button" value="Add Product" onclick="addColumn()" /></th> -->
                 </tr>
 
-                <tr id="row1">
+                <!-- <tr id="row1">
                     <td id="parameter_row1">Ex parameter</td>
                     <td id="product_row1">Ex product</td>
                     
@@ -88,12 +104,20 @@ function edit_row(no){
                             <input type="button" id="save_button1" value="Save" class="save" onclick="save_row()">
                             <input type="button" value="Delete" class="delete" onclick="delete_row()">
                     </td>
-                </tr>
+                </tr> -->
 
-                <tr>
+                <tr id="row1">
                     <td><input type="text" id="new_parameter"></td>
                     <td><input type="text" id="new_product"></td>
-                    <td><input type="button" class="add" onclick="add_row();" value="Add Row"></td>
+                    <td><input type="text" id="new_product1"></td>
+                    <td><input type="text" id="new_product2"></td>
+                    <td><input type="text" id="new_product3"></td>
+                    <!-- <td><input type="button" class="add" onclick="add_row();" value="Add Row"></td> -->
+                    <td>
+                        <input type="button" id="edit_button1" value="Edit" class="edit" onclick="edit_row()">
+                        <input type="button" id="save_button1" value="Save" class="save" onclick="save_row()">
+                        <input type="button" value="Delete" class="delete" onclick="delete_row()">
+                </td>
                 </tr>
 
 
