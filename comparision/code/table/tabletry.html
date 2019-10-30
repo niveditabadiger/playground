@@ -1,8 +1,7 @@
 <html>
     <head>
-        <script type="text/javscript" src="try_script.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <!-- <script type="text/javscript" src="try_script.js"></script> -->
+
 
 
         <script>
@@ -11,6 +10,10 @@
             var parameter_val;
             if(document.getElementById('parameter_text') != null){
                 str = document.getElementById("parameter_text").value;
+                console.log("hi");
+            }
+            else{
+                str = null;
             }
     // var parameter_val=document.getElementById("parameter_text"+no).value;
     var product_val=document.getElementById("product_text"+no).value;
@@ -44,7 +47,7 @@ function add_row()
 
     var table=document.getElementById("data_table");
     var table_len=(table.rows.length)-1;
-    var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='parameter_row"+table_len+"'>"+new_parameter+"</td><td id='product_row"+table_len+"'>"+new_product+"</td><td id='product1_row"+table_len+"'>"+new_product1+"</td><td id='product2_row"+table_len+"'>"+new_product2+"</td><td id='product3_row"+table_len+"'>"+new_product3+"</td><td><input type='button' id='edit_button"+table_len+"' value='Edit' class='edit' onclick='edit_row("+table_len+")'> <input type='button' id='save_button"+table_len+"' value='Save' class='save' onclick='save_row("+table_len+")'> <input type='button' value='Delete' class='delete' onclick='delete_row("+table_len+")'></td></tr>";
+    var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='parameter_row"+table_len+"'>"+new_parameter+"</td><td id='product_row"+table_len+"'>"+new_product+"</td><td id='product1_row"+table_len+"'>"+new_product1+"</td><td id='product2_row"+table_len+"'>"+new_product2+"</td><td id='product3_row"+table_len+"'>"+new_product3+"</td><td><input type='button' id='edit_button"+table_len+"' value='Edit' class='edit' onclick='edit_row("+table_len+")'> <input type='button' id='save_button"+table_len+"' value='Save' class='save' onclick='save_row("+table_len+")'> <input type='button' value='Delete' class='delete' onclick='delete_row("+table_len+")'> </td></tr>";
 
     document.getElementById("new_parameter").value=" ";
     document.getElementById("new_product").value=" ";
@@ -81,30 +84,18 @@ function edit_row(no){
         </script>
     </head>
 
-    <body>
-        <div id="wrapper">
+    <body style="background-color: #f1f1f1;">
+        <div id="wrapper" style="margin-top: 5%; background: #FFFFFF;  box-shadow: 0px 0px 10px #00000029; padding: 8%;">
             <table align='center' cellspacing=2 cellpadding=5 id="data_table" border=1>
+                <tbody>
 
                 <tr>
-                    <!-- <th>Sl.no</th> -->
                     <th><input type="button" class="add" onclick="add_row();" value="Add parameter"></th>    
-                    <th>Product</th>
-                    <th>product</th>
-                    <th>product</th>
-                    <th>product</th>
-                    <!-- <th><INPUT type="button" value="Add Product" onclick="addColumn()" /></th> -->
+                    <th><span>Enter product<br></span><input type="text"></th>
+                    <th><span>Enter product<br></span><input type="text"></th>
+                    <th><span>Enter product<br></span><input type="text"></th>
+                    <th><span>Enter product<br></span><input type="text"></th>
                 </tr>
-
-                <!-- <tr id="row1">
-                    <td id="parameter_row1">Ex parameter</td>
-                    <td id="product_row1">Ex product</td>
-                    
-                    <td>
-                            <input type="button" id="edit_button1" value="Edit" class="edit" onclick="edit_row()">
-                            <input type="button" id="save_button1" value="Save" class="save" onclick="save_row()">
-                            <input type="button" value="Delete" class="delete" onclick="delete_row()">
-                    </td>
-                </tr> -->
 
                 <tr id="row1">
                     <td><input type="text" id="new_parameter"></td>
@@ -112,19 +103,36 @@ function edit_row(no){
                     <td><input type="text" id="new_product1"></td>
                     <td><input type="text" id="new_product2"></td>
                     <td><input type="text" id="new_product3"></td>
-                    <!-- <td><input type="button" class="add" onclick="add_row();" value="Add Row"></td> -->
+                    
                     <td>
-                        <input type="button" id="edit_button1" value="Edit" class="edit" onclick="edit_row()">
+                        <!-- <input type="button" id="edit_button1" value="Edit" class="edit" onclick="edit_row()">
                         <input type="button" id="save_button1" value="Save" class="save" onclick="save_row()">
-                        <input type="button" value="Delete" class="delete" onclick="delete_row()">
+                        <input type="button" value="Delete" class="delete" onclick="delete_row()">                         -->
+                        <input type="button" class="add" onclick="add_row();" value="OK">
                 </td>
                 </tr>
 
-
+            </tbody>
             </table>
+           
         </div>
 
 
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script> 
+    
+        
+        <script type="text/javascript">
+          $('tbody').sortable();
+        </script>
+        
+
+        <script type="text/javascript">
+            $(document).ready(function() {     
+            $('#data_table').dragtable();  
+            });
+            </script>
+            
 
     </body>
 </html>
