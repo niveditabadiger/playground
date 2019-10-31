@@ -1,0 +1,239 @@
+<html>
+    <head>
+        <!-- <script type="text/javscript" src="try_script.js"></script> -->
+
+
+
+        <script>
+        function save_row(no)
+        {
+            var parameter_val;
+            if(document.getElementById('parameter_text') != null){
+                str = document.getElementById("parameter_text").value;
+                console.log("hi");
+            }
+            else{
+                str = null;
+            }
+    // var parameter_val=document.getElementById("parameter_text"+no).value;
+    var product_val=document.getElementById("product_text"+no).value;
+    var product1_val=document.getElementById("product1_text"+no).value;
+    var product2_val=document.getElementById("product2_text"+no).value;
+    var product3_val=document.getElementById("product3_text"+no).value;
+
+    document.getElementById("parameter_row"+no).innerHTML=parameter_val;
+    document.getElementById("product_row"+no).innerHTML=product_val;
+    document.getElementById("product1_row"+no).innerHTML=product1_val;
+    document.getElementById("product2_row"+no).innerHTML=product2_val;
+    document.getElementById("product3_row"+no).innerHTML=product3_val;
+
+    document.getElementById("edit_button"+no).style.display="block";
+    document.getElementById("save_button"+no).style.display="none";
+}
+
+function delete_row(no)
+{
+ document.getElementById("row"+no+"").outerHTML="";
+}
+
+
+function add_row()
+{
+    
+    var new_parameter=document.getElementById("new_parameter").value;
+    var new_product=document.getElementById("new_product").value;
+    var new_product1=document.getElementById("new_product1").value;
+    var new_product2=document.getElementById("new_product2").value;
+    var new_product3=document.getElementById("new_product3").value;
+
+    var table=document.getElementById("data_table");
+    var table_len=(table.rows.length)-1;
+    var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='parameter_row"+table_len+"'>"+new_parameter+"</td><td id='product_row"+table_len+"'>"+new_product+"</td><td id='product1_row"+table_len+"'>"+new_product1+"</td><td id='product2_row"+table_len+"'>"+new_product2+"</td><td id='product3_row"+table_len+"'>"+new_product3+"</td><td><input type='button' id='edit_button"+table_len+"' value='Edit' class='edit' onclick='edit_row("+table_len+")'> <input type='button' id='save_button"+table_len+"' value='Save' class='save' onclick='save_row("+table_len+")'> <input type='button' value='Delete' class='delete' onclick='delete_row("+table_len+")'> </td></tr>";
+
+    // if (new_parameter.value == null) {
+    //     alert("Parameter not inserted");
+    // }
+
+    document.getElementById("new_parameter").value=" ";
+    document.getElementById("new_product").value=" ";
+    document.getElementById("new_product1").value=" ";
+    document.getElementById("new_product2").value=" ";
+    document.getElementById("new_product3").value=" ";
+    
+    
+}
+
+function edit_row(no){
+    document.getElementById("edit_button"+no).style.display="none";
+    document.getElementById("save_button"+no).style.display="block";
+
+    var parameter=document.getElementById("parameter_row"+no);
+    var product=document.getElementById("product_row"+no);
+    var product1=document.getElementById("product1_row"+no);
+    var product2=document.getElementById("product2_row"+no);
+    var product3=document.getElementById("product3_row"+no);
+
+    var parameter_data=parameter.innerHTML;
+    var product_data=product.innerHTML;
+    var product1_data=product.innerHTML;
+    var product2_data=product.innerHTML;
+    var product3_data=product.innerHTML;
+
+    parameter.innerHTML="<input type='text' id='prameter_text"+no+"' value='"+parameter_data+"'>";
+    product.innerHTML="<input type='text' id='product_text"+no+"' value='"+product_data+"'>";
+    product1.innerHTML="<input type='text' id='product1_text"+no+"' value='"+product1_data+"'>";
+    product2.innerHTML="<input type='text' id='product2_text"+no+"' value='"+product2_data+"'>";
+    product3.innerHTML="<input type='text' id='product3_text"+no+"' value='"+product3_data+"'>";
+}
+
+
+    function display(){
+            document.getElementById("Add-product-frame").style.display = "block";
+        }
+
+    function display1(){
+            document.getElementById("Add-product-frame1").style.display = "block";
+        }   
+
+    function display2(){
+            document.getElementById("Add-product-frame2").style.display = "block";
+        }
+
+    function display3(){
+            document.getElementById("Add-product-frame3").style.display = "block";
+        }    
+
+    function addproduct(){
+        document.getElementById("Add-product-frame").style.display = "none";
+        document.getElementById("pro").style.display = "none";
+      
+        var table = document.getElementById("data_table");
+        
+        var product = document.getElementById("addproduct");
+        var newer_product = document.getElementById("new_product_name");
+       
+        newer_product.innerHTML=product.value;
+    
+        // var text_product = document.getElementById("new_product_name_txt");
+        // text_product.value=product[i].value;
+   
+    }
+
+    function addproduct1(){
+        document.getElementById("Add-product-frame1").style.display = "none";
+        document.getElementById("pro1").style.display = "none";
+      
+        var table = document.getElementById("data_table");
+        var product1 = document.getElementById("addproduct1");
+        var newer_product1 = document.getElementById("new_product_name1");
+       
+        newer_product1.innerHTML=product1.value;
+    }
+
+    function addproduct2(){
+        document.getElementById("Add-product-frame2").style.display = "none";
+        document.getElementById("pro2").style.display = "none";
+      
+        var table = document.getElementById("data_table");
+        var product2 = document.getElementById("addproduct2");
+        var newer_product2 = document.getElementById("new_product_name2");
+       
+        newer_product2.innerHTML=product2.value;
+    }
+
+    function addproduct3(){
+        document.getElementById("Add-product-frame3").style.display = "none";
+        document.getElementById("pro3").style.display = "none";
+      
+        var table = document.getElementById("data_table");
+        var product3 = document.getElementById("addproduct3");
+        var newer_product3 = document.getElementById("new_product_name3");
+       
+        newer_product3.innerHTML=product3.value;
+    }
+
+        </script>
+    </head>
+
+    <body style="background-color: #f1f1f1;">
+        <div id="wrapper" style="margin-top: 3%; background: #FFFFFF;  box-shadow: 0px 0px 10px #00000029; padding: 8%;">
+                <div style="height: 25%; width: 25%; background-color: #f1f1f1; padding: 1%; display: none; position: absolute;"class="Add-product-frame" id="Add-product-frame">
+                        <p style="margin: 8% 4% 1% 4%; font-size: 14px; color: #000000;">ADD PRODUCT:</p>
+                        <input type="text" placeholder="Ex: HP" id="addproduct" style="margin: 8% 4% 1% 4%;"/>
+                        <input type="button" style="margin: 5% 5% 6% 6%; border-radius: 25px; width: 150px; padding: 10px; background-color: #4C8CB7; border: #4C8CB7; -webkit-text-fill-color: #ffffff; font-weight: 700;" value="ADD PRODUCT" onclick="addproduct()">
+                </div>
+
+                <div style="height: 25%; width: 25%; background-color: #f1f1f1; padding: 1%; display: none; position: absolute;"class="Add-product-frame1" id="Add-product-frame1">
+                    <p style="margin: 8% 4% 1% 4%; font-size: 14px; color: #000000;">ADD PRODUCT:</p>
+                    <input type="text" placeholder="Ex: sony" id="addproduct1" style="margin: 8% 4% 1% 4%;"/>
+                    <input type="button" style="margin: 5% 5% 6% 6%; border-radius: 25px; width: 150px; padding: 10px; background-color: #4C8CB7; border: #4C8CB7; -webkit-text-fill-color: #ffffff; font-weight: 700;" value="ADD PRODUCT" onclick="addproduct1()">
+                </div>
+
+                <div style="height: 25%; width: 25%; background-color: #f1f1f1; padding: 1%; display: none; position: absolute;"class="Add-product-frame2" id="Add-product-frame2">
+                    <p style="margin: 8% 4% 1% 4%; font-size: 14px; color: #000000;">ADD PRODUCT:</p>
+                    <input type="text" placeholder="Ex: lenovo" id="addproduct2" style="margin: 8% 4% 1% 4%;"/>
+                    <input type="button" style="margin: 5% 5% 6% 6%; border-radius: 25px; width: 150px; padding: 10px; background-color: #4C8CB7; border: #4C8CB7; -webkit-text-fill-color: #ffffff; font-weight: 700;" value="ADD PRODUCT" onclick="addproduct2()">
+                </div>
+
+                <div style="height: 25%; width: 25%; background-color: #f1f1f1; padding: 1%; display: none; position: absolute;"class="Add-product-frame3" id="Add-product-frame3">
+                    <p style="margin: 8% 4% 1% 4%; font-size: 14px; color: #000000;">ADD PRODUCT:</p>
+                    <input type="text" placeholder="Ex: intel" id="addproduct3" style="margin: 8% 4% 1% 4%;"/>
+                    <input type="button" style="margin: 5% 5% 6% 6%; border-radius: 25px; width: 150px; padding: 10px; background-color: #4C8CB7; border: #4C8CB7; -webkit-text-fill-color: #ffffff; font-weight: 700;" value="ADD PRODUCT" onclick="addproduct3()">
+                </div>
+
+
+            <table align='center' cellspacing=2 cellpadding=5 id="data_table">
+                <tbody>
+
+                <tr>
+                    <th><input type="button" class="add" onclick="add_row();" value="Add parameter"></th>    
+                    <th><span onclick="display()" id="pro">Enter product<br></span><span id="new_product_name"></span></th>
+                    <th><span onclick="display1()" id="pro1">Enter product<br></span><span id="new_product_name1"></span></th>
+                    <th><span onclick="display2()" id="pro2">Enter product<br></span><span id="new_product_name2"></span></th>
+                    <th><span onclick="display3()" id="pro3">Enter product<br></span><span id="new_product_name3"></span></th>
+
+                    <!-- <th><span>Enter product<br></span><input type="text"></th>
+                    <th><span>Enter product<br></span><input type="text"></th> -->
+                    <!-- <th><span>Enter product<br></span><input type="text"></th> -->
+                     <!-- <th><input type="text" id="new_product_name_txt" placeholder="Enter product" onclick="display()"></th> -->
+                </tr>
+
+                <tr id="row1">
+                    <td><input type="text" id="new_parameter"></td>
+                    <td><input type="text" id="new_product"></td>
+                    <td><input type="text" id="new_product1"></td>
+                    <td><input type="text" id="new_product2"></td>
+                    <td><input type="text" id="new_product3"></td>
+                    
+                    <td>
+                        <!-- <input type="button" id="edit_button1" value="Edit" class="edit" onclick="edit_row()">
+                        <input type="button" id="save_button1" value="Save" class="save" onclick="save_row()">
+                        <input type="button" value="Delete" class="delete" onclick="delete_row()">                         -->
+                        <input type="button" class="add" onclick="add_row();" value="OK">
+                </td>
+                </tr>
+
+            </tbody>
+            </table>
+           
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script> 
+    
+        
+        <script type="text/javascript">
+          $('tbody').sortable();
+        </script>
+        
+
+        <script type="text/javascript">
+            $(document).ready(function() {     
+            $('#data_table').dragtable();  
+            });
+            </script>
+            
+
+    </body>
+</html>
